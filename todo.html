@@ -1,0 +1,171 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO DOs</title>
+    <style>
+		body{
+			font-family: Arial, Helvetica, sans-serif;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #f0f0f0;
+			margin: 0;
+		}
+
+      .container {
+        width: 500px;
+        height: 600px;
+        /* margin: 0 auto; */
+        /* background-color: #ddd; */
+		/* overflow-y: auto; */
+      }
+
+      h2 {
+	  text-align: center;
+      }
+
+      #todos {
+        width: 400px;
+        /* height: 460px; */
+        margin: 30px auto 0px auto;
+        /* background-color: #dddd; */
+		/* display: block; */
+		/* overflow-y: auto; */
+      }
+
+      #todo {
+        width: 340px;
+        max-height: 75px;
+        position: relative;
+        left: 25px;
+        top: 10px;
+		margin: 5px;
+		display: none; 
+      }
+
+      .input {
+        height: 50px;
+        width: 400px;
+        margin: 0 auto;
+      }
+
+      .input input {
+        height: 50px;
+        width: 340px;
+        outline: none;
+      }
+
+      .input input::placeholder {
+        padding: 5px;
+      }
+
+      .btn {
+		width: 50px;
+        height: 40px;
+        border: 1px solid #fff;
+      }
+
+      .btn:hover {
+        cursor: pointer;
+        background-color: #ddd;
+      }
+
+      .text {
+        width: 260px;
+        height: 60px;
+        margin: 5px 0px 5px 5px;
+        background-color: #dddd;
+		padding: 5px;
+      }
+
+      #todo input,
+      .text,
+      .dltbtn {
+        display: inline-block;
+        position: relative;
+      }
+
+      #checkbox {
+        width: 24px;
+        height: 22px;
+        top: 10px;
+        left: 10px;
+      }
+
+      .dltbtn {
+        top: 30px;
+        left: -20px;
+        background-color: rgb(202, 35, 35);
+        border-radius: 4px;
+      }
+
+	  .completed{
+			text-decoration: line-through;
+			color: gray;
+		}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>My To-Do List</h2>
+      <div class="input">
+        <input type="text" class="user-text" placeholder="Add a new Task..." />
+        <button class="btn">Add</button>
+      </div>
+      <div id="todos">
+        <div id="todo">
+          <div class="text"></div>
+          <input type="checkbox" name="" id="checkbox" />
+          <button class="dltbtn">X</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let userText = document.querySelector(".user-text");
+      let submitButton = document.querySelector(".btn");
+      let toDos = document.getElementById("todos");
+      let toDo = document.getElementById("todo");
+      let check = document.getElementById("checkbox");
+	  let deletebtn = document.querySelector(".dltbtn");
+
+      function cloneDiv(text) {
+		//cloning existing div
+        let clonedDiv = toDo.cloneNode(true);
+		clonedDiv.style.display = "block";
+
+		let clonedText = clonedDiv.querySelector(".text");
+		clonedText.innerText = text;
+
+		let clonedCheck = clonedDiv.querySelector("#checkbox");
+		clonedCheck.addEventListener("change", () => {
+			//if(clonedCheck.checked === true){
+				//clonedCheck.disabled = true;
+			//}
+			clonedText.classList.toggle('completed');
+		});
+
+		//each clone has its delete button
+		let clonedDeleteBtn = clonedDiv.querySelector(".dltbtn");
+		clonedDeleteBtn.addEventListener("click", () => {
+		toDos.removeChild(clonedDiv);
+		clonedText.innerText = "";
+	  });
+        toDos.appendChild(clonedDiv);
+      }
+
+      submitButton.addEventListener("click", () => {
+		if(userText.value === ''){
+			alert("Please enter your ToDo first.");
+		}else{
+			let text = userText.value;
+			userText.value = "";
+			cloneDiv(text);
+		}
+      });
+    </script>
+  </body>
+</html>
