@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="outer-box">
+        <div class="display">
+          <div class="input"></div>
+        </div>
+        <button class="clear box" onclick="clearDisplay()">C</button>
+        <div class="inner-boxes">
+          <button class="box">sin</button>
+          <button class="box">cos</button>
+          <button class="box">tan</button>
+          <button class="box" onclick="choosefactop('sqr')">sqrt</button>
+          <button class="box">exp</button>
+          <button class="box" onclick="appendNumber('7')">7</button>
+          <button class="box" onclick="appendNumber('8')">8</button>
+          <button class="box" onclick="appendNumber('9')">9</button>
+          <button class="box" onclick="chooseOperation('+')">+</button>
+          <button class="box" onclick="choosefactop('!')">x!</button>
+          <button class="box" onclick="appendNumber('4')">4</button>
+          <button class="box" onclick="appendNumber('5')">5</button>
+          <button class="box" onclick="appendNumber('6')">6</button>
+          <button class="box" onclick="chooseOperation('*')">*</button>
+          <button class="box" onclick="pivalue('pi')">pi</button>
+          <button class="box" onclick="appendNumber('1')">1</button>
+          <button class="box" onclick="appendNumber('2')">2</button>
+          <button class="box" onclick="appendNumber('3')">3</button>
+          <button class="box" onclick="chooseOperation('-')">-</button>
+          <button class="box">()</button>
+          <button class="box" onclick="appendNumber('0')">0</button>
+          <button class="box" onclick="chooseOperation('/')">/</button>
+          <button class="box" onclick="chooseOperation('%')">%</button>
+          <button class="box" onclick="compute()">=</button>
+          <button class="box" onclick="append('.')">.</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

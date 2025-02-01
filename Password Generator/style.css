@@ -1,0 +1,73 @@
+* {
+	margin: 0;
+	padding: 0;
+  }
+
+  .container {
+	height: 100vh;
+	position: absolute;
+	width: 100%;
+	background-image: url(images/password.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-color: rgb(36, 35, 35);
+  }
+
+  .generate {
+	background-color: rgba(135, 207, 235, 0.63);
+	height: 345px;
+	width: 500px;
+	margin: 200px auto;
+  }
+
+  h3 {
+	font-size: 25px;
+	color: white;
+	text-align: center;
+	word-spacing: 1px;
+	letter-spacing: 2px;
+	font-family: monospace;
+  }
+
+  #passwordfield {
+	margin: 40px 50px 10px;
+	color: black;
+	background-color: rgb(5, 82, 112);
+	font-size: 30px;
+	cursor: disable;
+	padding: 20px 60px;
+  }
+
+  .btn {
+	width: 50%;
+	height: 30px;
+	margin: 60px 25% 5px;
+	background-color: rgb(5, 82, 112);
+	color: white;
+	border: none;
+	font-family: monospace;
+  }
+
+  .msg {
+	width: 80%;
+	color: white;
+	margin: 80px 0px 0px 100px;
+	font-size: 19px;
+	font-family: "Times New Roman", Times, serif;
+  }
+
+  #Pass {
+	width: 10%;
+	height: 30px;
+	margin: -45px 400px;
+	border-radius: 50%;
+  }
+
+  .hide {
+	display: none;
+  }
+
+  .Button {
+	margin: 40px 25% 5px;
+  }

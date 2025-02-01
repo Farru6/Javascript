@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.container {
+  width: 500px;
+  height: 600px;
+  /* margin: 0 auto; */
+  /* background-color: #ddd; */
+  /* overflow-y: auto; */
+}
+
+h2 {
+  text-align: center;
+}
+
+#todos {
+  width: 400px;
+  /* height: 460px; */
+  margin: 30px auto 0px auto;
+  /* background-color: #dddd; */
+  /* display: block; */
+  /* overflow-y: auto; */
+}
+
+#todo {
+  width: 340px;
+  max-height: 75px;
+  position: relative;
+  left: 25px;
+  top: 10px;
+  margin: 5px;
+  display: none;
+}
+
+.input {
+  height: 50px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.input input {
+  height: 50px;
+  width: 340px;
+  outline: none;
+}
+
+.input input::placeholder {
+  padding: 5px;
+}
+
+.btn {
+  width: 50px;
+  height: 40px;
+  border: 1px solid #fff;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+.text {
+  width: 260px;
+  height: 60px;
+  margin: 5px 0px 5px 5px;
+  background-color: #dddd;
+  padding: 5px;
+}
+
+#todo input,
+.text,
+.dltbtn {
+  display: inline-block;
+  position: relative;
+}
+
+#checkbox {
+  width: 24px;
+  height: 22px;
+  top: 10px;
+  left: 10px;
+}
+
+.dltbtn {
+  top: 30px;
+  left: -20px;
+  background-color: rgb(202, 35, 35);
+  border-radius: 4px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}

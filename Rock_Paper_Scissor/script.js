@@ -1,42 +1,4 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock Paper scissor</title>
-    *{ margin: 0; padding: 0; text-align: center; justify-content: center; } h3{
-    background-color: #081b31; color: white; height: 30px; line-height: 25px; }
-    .choices{ display: flex; gap: 40px; margin-top: 50px; } .choice{ height:
-    100px; width: 100px; background-color: blueviolet; border-radius: 50%; }
-    .choice:hover{ opacity: 50%; cursor: pointer; } .scoreboard{ display: flex;
-    font-size: 20px; margin-top: 30px; gap: 55px; } #userscore, #compscore{
-    font-size: 40px; } .msgcont{ margin-top: 45px; } #msg{ background-color:
-    black; color: white; height: 30px; font-size: 20px; display: inline;
-    padding: 10px; border-radius: 10px; }
-  </head>
-  <body>
-    <h3>Rock Paper Scissor</h3>
-    <main>
-      <div class="choices">
-        <div class="choice" id="rock">rock</div>
-        <div class="choice" id="paper">paper</div>
-        <div class="choice" id="scissor">scissor</div>
-      </div>
-      <div class="scoreboard">
-        <div class="score">
-          <p id="userscore">0</p>
-          <p>You</p>
-        </div>
-        <div class="comp">
-          <p id="compscore">0</p>
-          <p>Comp</p>
-        </div>
-      </div>
-      <div class="msgcont">
-        <p id="msg">Play your move</p>
-      </div>
-    </main>
-    <script>
-      let userscore = 0;
+let userscore = 0;
       let compscore = 0;
 
       const choices = document.querySelectorAll(".choice");
@@ -58,25 +20,20 @@
           msg.innerText =
             "You Win :) Your " + userchoice + " beats " + compchoice;
           msg.style.backgroundColor = "green";
-          //console.log("You Win!!!");
         } else {
           compscore++;
           compScore.innerText = compscore;
           msg.innerText =
             "You lost :( " + compchoice + " beats your " + userchoice;
           msg.style.backgroundColor = "red";
-          //console.log("You lost");
         }
       };
 
       const playgame = (userchoice) => {
-        //console.log("user choice =", userchoice);
         //generating comp choice
         const compchoice = genCompChoice();
-        //console.log("computer choice =", compchoice);
 
         if (userchoice === compchoice) {
-          //console.log("The game was Draw");
           msg.innerText = "The game was Draw. Play again.";
           msg.style.backgroundColor = "#081b31";
         } else {
@@ -101,6 +58,3 @@
           playgame(userchoice);
         });
       });
-    </script>
-  </body>
-</html>
